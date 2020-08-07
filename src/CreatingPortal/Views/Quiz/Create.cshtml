@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <create-activity-breadcrumb activity-name="Quiz"></create-activity-breadcrumb>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <fieldset>
+                <legend>Quiz</legend>
+                <div class="row">
+                    <title-input></title-input>
+                    <is-public-switch></is-public-switch>
+                </div>
+                <div class="questions-container">
+                    <quiz-question-form question-number="1"></quiz-question-form>
+                    <quiz-question-form question-number="2"></quiz-question-form>
+                    <quiz-question-form question-number="3"></quiz-question-form>
+                    <quiz-question-form question-number="4"></quiz-question-form>
+                    <quiz-question-form question-number="5"></quiz-question-form>
+                </div>
+                <div class="row">
+                    <add-button></add-button>
+                </div>
+                <div class="row mt-5">
+                    <save-button></save-button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/pages/quiz-create.js" asp-append-version="true"></script>

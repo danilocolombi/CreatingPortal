@@ -1,0 +1,35 @@
+﻿<div class="row">
+    <create-activity-breadcrumb activity-name="Unscramble"></create-activity-breadcrumb>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <fieldset>
+                <legend>Unscramble</legend>
+                <div class="row">
+                    <title-input></title-input>
+                    <is-public-switch></is-public-switch>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Write your senteces and we will unscramble it for you.</p>
+                    </div>
+                </div>
+                <div class="row unscramble-senteces">
+                   <unscramble-sentence-input position="1"></unscramble-sentence-input>
+                   <unscramble-sentence-input position="2"></unscramble-sentence-input>
+                   <unscramble-sentence-input position="3"></unscramble-sentence-input>
+                   <unscramble-sentence-input position="4"></unscramble-sentence-input>
+                </div>
+                <div class="row">
+                    <add-button></add-button>
+                </div>
+                <div class="row mt-5">
+                    <save-button></save-button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/pages/uncramble-create.js" asp-append-version="true"></script>
