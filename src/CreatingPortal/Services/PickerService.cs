@@ -11,9 +11,9 @@ namespace CreatingPortal.Services
     {
         private readonly IPickerService _pickerService;
 
-        public PickerService()
+        public PickerService(string ApiAddress)
         {
-            _pickerService = RestService.For<IPickerService>(Config.API_BASE_ADDRESS);
+            _pickerService = RestService.For<IPickerService>(ApiAddress);
         }
 
         public async Task<ResultResponse> CreateAsync(PickerCreationViewModel pickerCreationViewModel)

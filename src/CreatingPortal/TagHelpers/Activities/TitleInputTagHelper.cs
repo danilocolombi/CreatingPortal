@@ -6,15 +6,15 @@ namespace CreatingPortal.TagHelpers
     [HtmlTargetElement("title-input")]
     public class TitleInputTagHelper : TagHelper
     {
-        public string value { get; set; }
+        public string Value { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             output.TagName = "div";
             output.Attributes.SetAttribute("class", "col-md-8");
-            output.Content.SetHtmlContent(@"<div class='form-group'>
+            output.Content.SetHtmlContent($@"<div class='form-group'>
                                             <label for='inputTitle'>Title</label>
-                                            <input type='text' class='form-control' id='inputTitle' placeholder='Enter Title'>
+                                            <input type='text' class='form-control' id='inputTitle' placeholder='Enter Title' value={Value}>
                                             </div>");
         }
     }

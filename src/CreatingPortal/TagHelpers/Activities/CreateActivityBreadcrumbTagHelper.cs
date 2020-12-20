@@ -12,8 +12,8 @@ namespace CreatingPortal.TagHelpers
             output.TagName = "div";
             output.Attributes.SetAttribute("class", "col-md-5");
             output.Content.SetHtmlContent(@$"<ol class='breadcrumb'>
-                                            <li class='breadcrumb-item'><a href='/Home'>Home</a></li>
-                                            <li class='breadcrumb-item'><a href='/MyActivities/Create'>Create Templates</a></li>
+                                            <li class='breadcrumb-item'><a href='/home'>Home</a></li>
+                                            <li class='breadcrumb-item'><a href='/my-activities/create'>Create Templates</a></li>
                                             <li class='breadcrumb-item active'>Create {ActivityName}</li>
                                             </ol>");
         }

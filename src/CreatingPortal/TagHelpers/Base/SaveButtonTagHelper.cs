@@ -10,7 +10,7 @@ namespace CreatingPortal.TagHelpers.Base
         {
             output.TagName = "div";
             output.Attributes.SetAttribute("class", "col-md-12");
-            output.Content.SetHtmlContent("<button type='submit' class='btn btn-primary'>Save</button>");
+            output.Content.SetHtmlContent("<button type='button' class='btn btn-primary save-button'>Save</button>");
         }
     }
 }

@@ -1,16 +1,22 @@
-﻿<div class="row">
-    <div class="col-md-3">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header bg-white">My Activity Title</div>
-            <div class="card-body">
-                <p class="mb-1"><strong>Activity type:</strong> Unscramble</p>
-                <p class="mb-0"><strong>Created at:</strong> @DateTime.Now.ToShortDateString()</p>
-            </div>
-            <div class="card-footer bg-white">
-                <a href="#" class="card-link text-primary" data-toggle="tooltip" title="Play"><i class="fas fa-play fa-2 fa-lg"></i></a>
-                <a href="#" class="card-link text-success pl-5" data-toggle="tooltip" title="Edit"><i class="fas fa-edit fa-lg"></i></a>
-                <a href="#" class="card-link text-danger pl-5" data-toggle="tooltip" title="Delete"><i class="fas fa-trash-alt fa-lg"></i></a>
+﻿@using CreatingPortal.Models.Activities;
+<div class="row">
+
+    @foreach (MyActivityViewModel myActivityViewModel in ViewBag.Activities)
+    {
+        <div class="col-md-3">
+            <div class="card border-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header bg-white">@myActivityViewModel.Title</div>
+                <div class="card-body">
+                    <p class="mb-1"><strong>Activity type:</strong> @myActivityViewModel.KindOfActivity</p>
+                    <p class="mb-0"><strong>Created at:</strong> @myActivityViewModel.CreatedAt.ToShortDateString()</p>
+                </div>
+                <div class="card-footer bg-white">
+                    <a asp-controller="@myActivityViewModel.KindOfActivity" asp-action="Play" asp-route-id="@myActivityViewModel.Id" class="card-link text-primary" data-toggle="tooltip" title="Play"><i class="fas fa-play fa-2 fa-lg"></i></a>
+                    <a asp-controller="@myActivityViewModel.KindOfActivity" asp-action="Edit" asp-route-id="@myActivityViewModel.Id" class="card-link text-success pl-5" data-toggle="tooltip" title="Edit"><i class="fas fa-edit fa-lg"></i></a>
+                    <a asp-controller="@myActivityViewModel.KindOfActivity" asp-action="Delete" asp-route-id="@myActivityViewModel.Id" class="card-link text-danger pl-5" data-toggle="tooltip" title="Delete"><i class="fas fa-trash-alt fa-lg"></i></a>
+                </div>
             </div>
         </div>
-    </div>
+    }
+
 </div>

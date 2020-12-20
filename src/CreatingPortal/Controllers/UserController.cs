@@ -2,6 +2,7 @@
 
 namespace CreatingPortal.Controllers
 {
+    [Route("user")]
     public class UserController : Controller
     {
         public IActionResult Index()

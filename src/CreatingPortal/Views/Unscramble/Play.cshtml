@@ -1,0 +1,55 @@
+﻿@using CreatingPortal.Models.Unscrambles;
+@model IEnumerable<ShuffledExercise>
+
+<div class="row">
+    <create-activity-breadcrumb activity-name="Unscramble"></create-activity-breadcrumb>
+</div>
+@{
+    var count = 1;
+}
+@foreach (var shuffledExercise in Model)
+{
+    <h4 style="display:none;" id="title-@count">Question @count</h4>
+    <div class="row mb-5 sortable" id="question-@count" style="display:none; min-height: 300px;">
+        <div class="col-md-3 ui-state-default">
+            <div class="card text-white bg-primary mb-3 " style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="part1-@count">@shuffledExercise.Part1</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ui-state-default">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="part2-@count">@shuffledExercise.Part2</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ui-state-default">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="part3-@count">@shuffledExercise.Part3</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 ui-state-default">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h4 class="card-title" id="part4-@count">@shuffledExercise.Part4</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="answer-@count" value="@shuffledExercise.CompleteExercise" />
+
+    count++;
+}
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button type="button" class="btn btn-success" onclick="ShowNextQuestion()">Confirm</button>
+    </div>
+</div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="~/js/pages/unscramble-play.js" asp-append-version="true"></script>

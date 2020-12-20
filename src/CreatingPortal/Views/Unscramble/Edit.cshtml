@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model CreatingPortal.Models.Unscrambles.UnscrambleViewModel;
+<div class="row">
+    <create-activity-breadcrumb activity-name="Unscramble"></create-activity-breadcrumb>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <fieldset>
+                <legend>Unscramble</legend>
+                <div class="row">
+                    <title-input value="@Model.Title"></title-input>
+                    <is-public-switch value="@Model.IsPublic"></is-public-switch>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Write your senteces and we will unscramble it for you.</p>
+                    </div>
+                </div>
+                <div class="row unscramble-senteces">
+                    @foreach (var exercise in Model.Exercises)
+                    {
+                        <unscramble-sentence-input position="@exercise.Position" description="@exercise.Description"></unscramble-sentence-input>
+                    }
+                </div>
+                <div class="row">
+                    <add-button></add-button>
+                </div>
+                <div class="row mt-5">
+                    <input type="hidden" id="inputUnscrambleId" value="@Model.Id" />
+                    <save-button></save-button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script src="~/js/pages/unscramble.js" asp-append-version="true"></script>
+<script src="~/js/pages/unscramble-edit.js" asp-append-version="true"></script>

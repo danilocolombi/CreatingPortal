@@ -7,16 +7,16 @@ namespace CreatingPortal.Services.IServices
 {
     public interface IPickerService
     {
-        [Post("/Picker")]
+        [Post("/Pickers")]
         Task<ResultResponse> CreateAsync([Body] PickerCreationViewModel pickerCreationViewModel);
 
-        [Put("/Picker/{pickerId}")]
+        [Put("/Pickers/{pickerId}")]
         Task<ResultResponse> UpdateAsync(int pickerId, [Body] PickerCreationViewModel pickerCreationViewModel);
 
-        [Delete("/Picker/{pickerId}")]
+        [Delete("/Pickers/{pickerId}")]
         Task<ResultResponse> DeleteAsync(int pickerId);
 
-        [Get("/Picker/{pickerId}")]
+        [Get("/Pickers/{pickerId}")]
         Task<PickerViewModel> GetAsync(int pickerId);
     }
 }

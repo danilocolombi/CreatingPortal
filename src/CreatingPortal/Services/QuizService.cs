@@ -1,6 +1,4 @@
-﻿using CreatingPortal.Services.IServices;
-
-namespace CreatingPortal.Services
+﻿namespace CreatingPortal.Services
 {
     public class QuizService
     {

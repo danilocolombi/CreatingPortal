@@ -1,14 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace CreatingPortal.Controllers
 {
+    [Route("quiz")]
     public class QuizController : Controller
     {
+        [Route("create")]
         public IActionResult Create()
+        {
+            return View();
+        }
+
+        [Route("edit")]
+        public IActionResult Edit()
+        {
+            return View();
+        }
+
+        [Route("play")]
+        public IActionResult Play()
         {
             return View();
         }
